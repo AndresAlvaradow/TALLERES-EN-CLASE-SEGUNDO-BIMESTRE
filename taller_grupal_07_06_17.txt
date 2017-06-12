@@ -1,0 +1,144 @@
+TALLER GRUPAL EN CLASE
+Fecha: 07/06/2017
+Nombres: Andres Alvarado – Eduardo Riera
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package clase_matrices;
+import java.util.Scanner;
+/**
+ *
+ * @author Avd??a?
+ */
+public class Clase_matrices {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // declaracion de variables a pedir por teclado 
+        Scanner datos = new Scanner(System.in);
+        //declaracion de variables 
+        int lim=0, i=0, j=0, a=0;
+        //solicitud de variables al usuario 
+        System.out.println("Ingrese el limite");
+        lim=datos.nextInt();
+        //declaracion de la matriz
+        int[][] A=new int[lim][lim];
+        //realizacion de la matriz
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            { 
+                System.out.println("Ingrese los valores de la matriz"+i+","+j);
+                A[i][j]=datos.nextInt();
+            }
+        }
+        //presentacion de la matriz
+         System.out.println("presentacion de la matriz");
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            {
+                System.out.print(A[i][j]+" ");     
+            }
+            System.out.println(" ");
+        }
+        //diagonal principal 
+        System.out.println("La diagonal primaria es");
+        for(i=0;i<lim;i++)
+        {
+            for(j=0;j<lim;j++)
+            {
+                if(i==j)
+                {
+                    System.out.print(A[i][j]+" ");
+                }
+            }
+        }
+        System.out.println(" ");
+        //diagonal secundaria 
+        System.out.println("La diagonal secuandaria es");
+        for(i=0;i<lim;i++)
+        {
+            for(j=0;j<lim;j++)
+            {
+                if(i+j==lim-1)
+                {
+                    System.out.print(A[i][j]+" ");
+                }
+            }
+        }
+        System.out.println(" ");
+        //elementos sobre la diagonal principal
+        System.out.println("Elementos sobre la diagonal principal");
+        for(i=0;i<lim;i++)
+        {
+            for(j=0;j<lim;j++)
+            {
+                if(i<j)
+                {
+                    System.out.print(A[i][j]+" ");
+                }
+            }
+        }        
+        System.out.println(" ");
+        //Elementos bajo la diagonal principal
+        System.out.println("Elementos bajo la diagonal principal");
+        for(i=0;i<lim;i++)
+        {
+            for(j=0;j<lim;j++)
+            {
+                if(i>j)
+                {
+                    System.out.print(A[i][j]+" ");
+                } 
+            }
+        } 
+        System.out.println(" ");
+        //elementos sobre la diagonal secundaria
+        System.out.println("Elementos sobre la diagonal secuandaria");
+        for(i=0;i<lim;i++)
+        {
+            for(j=0;j<lim;j++)
+            {
+                if((i+j)<(lim-1))
+                {
+                    System.out.print(A[i][j]+" ");
+                }
+            }
+        }         
+        System.out.println(" ");
+        //elementos bajo la diagonal secuandaria
+        System.out.println("Elementos bajo la diagonal secundaria");
+        for(i=0;i<lim;i++)
+        {
+            for(j=0;j<lim;j++)
+            {
+                if((i+j)>(lim-1))
+                {
+                    System.out.print(A[i][j]+" ");
+                } 
+            }
+        }
+        System.out.println(" "); 
+        //recorrido de la matriz en SIG-SAG
+        System.out.println("Recorrido de la matriz en SIG-SAG");
+        for(j=0;j<lim;j++)
+        {
+            a=j;
+            for(i=0;i<lim;i++)
+            {
+                if(a>=0)
+                {   
+                    a++;
+                   System.out.print(A[i][j]+" ");  
+                }
+            }
+            
+        }            
+    }
+    
+}
