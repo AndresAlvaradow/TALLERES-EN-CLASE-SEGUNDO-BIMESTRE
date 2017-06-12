@@ -1,0 +1,162 @@
+Nombre: Andres Alvarado 
+fecha: 07/06/2017
+                                    EJERCICIOS EN CLASE
+presentacion de la fila inferior de la matriz
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package matri_fila.inferior;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Avd??a?
+ */
+public class Matri_filaInferior {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // declaracion de variables a pedir por teclado 
+        Scanner datos = new Scanner(System.in);
+        //declaracion de variables 
+        int lim=0, i=0, j=0;
+        //solicitud de variables al usuario 
+        System.out.println("Ingrese el limite");
+        lim=datos.nextInt();
+        //declaracion de la matriz
+        int[][] A=new int[lim][lim];
+        //realizacion de la matriz
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            { 
+                System.out.println("Ingrese los valores de la matriz"+i+","+j);
+                A[i][j]=datos.nextInt();
+            }
+        }
+        //presentacion de la fila inferior 
+        System.out.println("presentacion de la fila inferior");
+        for(j=0;j<A.length;j++)
+        {
+            System.out.print(A[lim-1][j]+"  ");
+            
+        }
+        System.out.println(" ");
+        
+    }
+    
+}
+
+quemar  datos a una matriz 
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package matrices;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Avd??a?
+ */
+public class Matrices {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // declaracion de variables a pedir por teclado 
+        Scanner datos = new Scanner(System.in);
+        //declaracion de variables 
+        int  i=0, j=0;
+        //declaracion de la matriz
+        int[][] A=new int[3][3];
+        //llenado de la matriz
+        A[0][0]=12;
+        A[0][1]=18;
+        A[0][2]=25;
+        A[1][0]=42;
+        A[1][1]=45;
+        A[1][2]=47;
+        A[2][0]=48;
+        A[2][1]=20;
+        A[2][2]=1;
+        //presentacion de la matriz 
+         System.out.println("La matriz es: ");
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            {   
+                System.out.print(A[i][j]+" ");   
+            }
+            System.out.println(" ");      
+        }
+        
+
+    }
+    
+}
+
+llenado de una matriz por teclado
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package matrices;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Avd??a?
+ */
+public class Matrices {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // declaracion de variables a pedir por teclado 
+        Scanner datos = new Scanner(System.in);
+        //declaracion de variables 
+        int lim=0, i=0, j=0, a=0;
+        //solicitud de variables al usuario 
+        System.out.println("Ingrese el limite");
+        lim=datos.nextInt();
+        //declaracion de la matriz
+        int[][] A=new int[lim][lim];
+        //realizacion de la matriz
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            { 
+                System.out.println("Ingrese los valores de la matriz"+i+","+j);
+                A[i][j]=datos.nextInt();
+            }
+        }
+        //presentacion de la matriz
+         System.out.println("presentacion de la matriz");
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            {
+                System.out.print(A[i][j]+" ");     
+            }
+            System.out.println(" ");
+        }
+        
+
+    }
+    
+} 
