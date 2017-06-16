@@ -1,0 +1,96 @@
+Nombre: Andres Alvarado - Eduardo Riera 
+fecha: 14/06/2017
+
+
+                                                 TALLER EN CLASE GRUPAL
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package matrucula.metodos;
+import java.util.Scanner;
+/**
+ *
+ * @author Avd??a?
+ */
+public class MatruculaMetodos {
+static double iva=0.12;
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // declaracion de variables a pedir por consola 
+        Scanner datos = new Scanner(System.in);
+        // declaracion de varaiables 
+        double ciclo=0, troncales=0, complementarias=0, beca=0;
+        double resultado=0, total=0, total2=0;
+        // solicitud de tados al usuario
+        System.out.println("Ingrese el ciclo");
+        ciclo=datos.nextDouble();
+        System.out.println("Ingrese el numero de materias troncales");
+        troncales=datos.nextDouble();
+        System.out.println("Ingrese el numero de materias complementarias");
+        complementarias=datos.nextDouble();
+        System.out.println("0. Sin beca ");
+        System.out.println("1. Beca por meritos ");
+        System.out.println("2. Beca familiar");
+        beca=datos.nextDouble();
+        // presentacion de salidas 
+        resultado=ciclo(ciclo)+cmaterias(troncales,complementarias);
+        total=(calculoiva(resultado,iva));
+        total2=total-(total*beca(beca));
+        System.out.println("El subtotal es: "+resultado); 
+        System.out.println("El calculo con IVA: "+total);
+        System.out.println("el total a pagar es de:"+total2);
+    }
+    //eleccion del ciclo
+    public static double ciclo(double n){        
+        if (n==1){
+            return 700;
+        }
+        if (n==3){
+            return 720;
+        }
+        if (n==5){
+            return 740;
+        }
+        if (n==7){
+            return 760;
+        }
+        if (n==9){
+            return 780;
+        }
+        return 0;
+        //calculo del costo de las materias
+    }
+    public static double cmaterias(double mat1, double mat2){
+        double total=0;
+        total=(mat1*4*35)+(mat2*3*35);
+        return total;
+    }
+    //calculo del descuento segun la beca 
+    public static double beca(double n){
+        
+        if (n==1){
+           
+            return 0.15;
+            
+        }
+        if (n==2){
+            return 0.08;
+        }
+        if(n==0)
+        {
+            return 0;
+        }
+        return 0;
+    }
+    //calculo del iva 
+    public static double calculoiva(double subtotal, double iva){
+        double total=0;
+        total=subtotal+(subtotal*iva);
+        return total;
+    }
+    
+}
