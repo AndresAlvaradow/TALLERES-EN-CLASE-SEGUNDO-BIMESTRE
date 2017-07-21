@@ -1,0 +1,124 @@
+Nombre: Andres Alvarado
+Fecha: 20/06/2017
+
+                                                           DEBER METODOS
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package deber_metodos;
+import java.util.Scanner;
+/**
+ *
+ * @author Avd??a?
+ */
+public class Deber_metodos {
+
+    /**
+     * @param args the command line arguments
+     */
+    //declarcion de variables para metodos 
+    int datos=0, i=0, j=0, lim=0;
+    int [][] A;
+     public static void main(String[] args) {
+         //Llamado del metodo 
+         Deber_metodos Matriz=new Deber_metodos();
+        // presentacion de los resultados 
+       Matriz.matriz();
+       Matriz.presentacion_de_la_matriz();
+       Matriz.bajo_diagonal_principal();
+       Matriz.sobre_la_diagonal_secuandaria();
+       Matriz.bajo_la_diagonal_secuandaria();
+       
+    }
+    //escojer y llenado de las matriz
+    public  void matriz()
+    {
+        //declaracion de variables a pedir por teclado
+        Scanner datos=new Scanner(System.in);
+        //solicitud de las dimensiones de la matriz
+        System.out.println("Ingrese las dimensiones de la matriz");
+        lim=datos.nextInt();
+        //ingreso de la dimension a la matris 
+        A= new int [lim][lim];
+        //llenado de la matriz
+        for(i=0;i<A.length;i++)
+        {
+         for(j=0;j<A.length;j++)
+         {
+             System.out.println("Ingrese los valores de la matriz "+i+","+j);
+             A[i][j]=datos.nextInt();
+         }   
+        }
+    }
+    //presentacion de la matriz
+    public void presentacion_de_la_matriz(){
+        System.out.println("Presentacion de la matriz");
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            {
+                System.out.print(A[i][j]+" ");
+            }
+            System.out.println(" ");
+        }
+        
+    }
+    
+    //Elementos debajo de la diagonal principal
+    public void bajo_diagonal_principal(){
+        int[] arreglo1=new int[lim];
+        System.out.println("Elementos bajo la diagonal principal");
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            {
+                if(i>j)
+                {
+                    arreglo1[j]=A[i][j];
+                    System.out.print(arreglo1[j]+" ");
+                } 
+            }
+        }        
+        System.out.println(" ");
+    }
+    //Elementos sobre la diagonal secundaria 
+    public void sobre_la_diagonal_secuandaria(){
+        int[] arreglo2=new int[lim];
+        System.out.println("Elementos sobre la diagonal secundaria");
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            {
+                if((i+j)<(lim-1))
+                {
+                    arreglo2[j]=A[i][j];
+                    System.out.print(arreglo2[j]+" ");
+                }                
+                
+            }
+        }
+        System.out.println(" ");
+    }
+    //Elementos bajo la diagonal secundaria 
+    public void bajo_la_diagonal_secuandaria(){
+        int[] arreglo3=new int[lim];
+        System.out.println("Elementos debajo de la diagonal secundaria");
+        for(i=0;i<A.length;i++)
+        {
+            for(j=0;j<A.length;j++)
+            {
+                if((i+j)>(lim-1))
+                {
+                    arreglo3[j]=A[i][j];
+                    System.out.print(arreglo3[j]+" ");
+                }                 
+                
+            }
+        }
+        System.out.println(" ");
+        
+    }
+    
+} 
