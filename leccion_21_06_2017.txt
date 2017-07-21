@@ -1,0 +1,173 @@
+nombre: Andres Alvarado
+Fecha: 21/06/2017
+leccion
+
+
+
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package leccion_2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Avd??a?
+ */
+public class Leccion_2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    //declarcion de variables para metodos 
+    int datos=0, i=0, j=0, lim=0;
+    int [][] A;    
+    int[][] matri;
+    int[] A1;
+    int[] A2;
+    Scanner entrada;    
+    public static void main(String[] args) {        
+        Leccion_2 ma = new Leccion_2();
+        ma.lista();        
+        ma.llenar();
+        ma.imprimir(); 
+        ma.matriz1();
+        ma.matriz2();
+    }
+    public void lista(){
+        entrada=new Scanner(System.in);    
+        System.out.print("Ingrese el límite de la lista: ");
+        int lim = entrada.nextInt();
+        A1 = new int[lim];
+        A2 = new int[lim];
+        System.out.print("Ingrese los "+ lim+" del arreglo 1");
+        for(int i = 0; i<lim; i++)
+        {    
+            A1[i] = entrada.nextInt();            
+        }
+        System.out.print("Ingrese los "+ lim +"del arreglo 2" );
+        for(int a = 0; a<lim; a++)
+        {         
+            A2[a] = entrada.nextInt();            
+        }
+        System.out.print("La respuesta es: "); 
+        int b = lim-1;
+        for(int a = 0; a<lim; a++)
+        {            
+            System.out.print(A1[a]*A2[b]+" ");
+            b--;
+        }
+        
+        
+    }     
+    public void llenar(){
+        entrada=new Scanner(System.in);
+        System.out.print("Ingrese el limite de la matriz: "); 
+        int lim = entrada.nextInt();
+
+        matri = new int[lim][lim];       
+        
+        //llenar la matriz
+        for(int a = 0;a < lim; a++)
+        {
+            for(int b = 0;b<lim;b++)
+            {
+                System.out.print("Ingrese un matriz"+"["+(a)+"]["+(b)+"]: ");
+                matri[a][b] = entrada.nextInt();
+            }
+        }
+    }
+    public void imprimir(){        
+        System.out.println("Presentacion de la matriz: ");  
+        //recorrer la matriz
+        for(int a=0;a <matri.length;a++)
+        {
+            for(int b=0;b <matri[a].length;b++)
+            {
+              System.out.print(matri[a][b]+" ");  
+            }
+            System.out.println(" ");
+        }
+    }
+    public void matriz1(){   
+        System.out.println("Presentacion de la diagonal 1");  
+        //recorrer la matriz
+        for(int i = 0; i < (matri.length*2);i++)
+        {
+            if(i % 2 == 0)
+            {
+                for(int a=matri.length-1;a >= 0;a--)
+                {
+                    for(int b=0;b <matri[a].length;b++)
+                    {
+                        if (a+b == i)
+                        { 
+                            System.out.print(matri[a][b]+" ");               
+                        }
+                    }
+                }
+            }else
+            {
+                for(int a=0;a <matri.length;a++)
+                {
+                    for(int b=0;b <matri[a].length;b++)
+                    {
+                        if (a+b == i)
+                        { 
+                            System.out.print(matri[a][b]+" ");               
+                        }
+                    }
+                }
+            }          
+        }
+    }
+    public void matriz2(){   
+        System.out.println("Presentacion de la diagonal 2"); 
+        int [][] matri2 = new int [matri.length][matri.length];
+        for(int a=0;a<matri.length;a++)
+        {                         
+            int k = 0;                    
+            for(int b=matri.length-1;b>=0;b--)
+            {              
+               matri2[a][k] = matri[a][b];
+               k++;
+            }       
+        }   
+        
+        //recorrer la matriz        
+        for(int k = 0; k < (matri.length*2);k++)
+        {
+            if(k % 2 == 0)
+            {
+                for(int a=0;a <matri.length;a++)
+                {
+                    for(int b=0;b <matri[a].length;b++)
+                    {
+                        if (a+b == k)
+                        { 
+                            System.out.print(matri2[a][b]+" ");               
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for(int a=matri.length-1;a >= 0;a--)
+                {
+                    for(int b=0;b <matri[a].length;b++)
+                    {
+                        if (a+b == k)
+                        { 
+                            System.out.print(matri2[a][b]+" ");               
+                        }
+                    }
+                }
+            }          
+        }
+    }
+} 
+
